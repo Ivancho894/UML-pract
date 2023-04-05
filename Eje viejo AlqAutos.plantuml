@@ -1,0 +1,86 @@
+@startuml
+
+class Auto{
+    patente
+    año
+    precioAlq
+    estado
+    modelo:Modelo
+    crear()
+    mostrar()
+    cambiarAlq()
+    cambiarEstado()
+    conocerModelo()
+
+}
+Class Marca{
+    nombre
+    modelo:Modelo
+    Crear()
+    mostrar()
+    conocerModelo()
+}
+Class Modelo{
+    nombre
+    descripcion
+    crear()
+    mostrar()
+    
+}
+
+Class Interesado{
+    nombre
+    contacto
+    crear()
+    mostrar()
+}
+CLass empresa{
+    cuit
+    razonSocial
+    crear()
+    mostrar()
+}
+
+
+Class Alquiler{
+    fecha
+    numAlquiler
+    formadepago:Pago
+    cliente:Cliente
+    detalleAlq:DetalleAlquiler
+    crear()
+    mostrar()
+    cancelarAlq()
+    conocerCliente()
+    calcularTotal()
+    conocerTipoPago()
+    conocerDetalleAlq()
+}
+Class DetalleAlquiler{
+    duracion
+    precioAlqDia
+    fechaDevolucion
+    fechaDevolucionReal
+    auto:Auto
+    crear()
+    mostrar()
+    calcularMonto()
+    conocerAuto()
+    registrarDev()
+}
+Class Pago{
+    descripcion
+    nombre
+    crear()
+    mostrar()
+
+}
+Alquiler -left->"1"Pago
+Alquiler -right-> "0..1" Interesado
+Alquiler -right-> "0..1" empresa
+Alquiler o-down->"1...*"DetalleAlquiler
+DetalleAlquiler -right->"1"Auto
+Auto -right->"1"Modelo
+Marca -down->"1"Modelo
+
+@enduml

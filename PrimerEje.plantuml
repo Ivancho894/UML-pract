@@ -1,0 +1,73 @@
+@startuml
+
+Class Piezas{
+    
+    activo
+    color
+    posicion: posicion
+    jugador: Jugadores
+
+    cambiarPosicion()
+    modificarActivo()
+    comer()
+
+
+}
+
+Class Posicion{
+    altura
+    largo 
+    color
+
+}
+Class Peon extends Piezas{
+    numero
+    movimiento
+    formaComer
+    cambiarPorReina()
+}
+Class Reina extends Piezas{
+    numero
+    movimiento
+    formaComer
+
+}
+Class Torre extends Piezas{
+    numero
+    movimiento
+    formaComer
+}
+Class Alfil extends Piezas{
+    numero
+    movimiento
+    formaComer
+}
+Class Caballo extends Piezas{
+    numero
+    movimiento
+    formaComer
+}
+Class Rey extends Piezas{
+    numero
+    movimiento
+    formaComer
+
+}
+Class Tablero {
+    material
+    cantMovimientos
+
+    movimiento()
+}
+Class Jugadores{
+    nombre
+    
+
+}
+
+Piezas -> "1" Posicion
+Tablero -> "1...18" Piezas
+Tablero -left-> "2" Jugadores
+
+
+@enduml
