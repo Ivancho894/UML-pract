@@ -1,0 +1,41 @@
+@startuml
+
+left to right direction
+
+
+
+:Encargado de federacion: as 5
+:Encargado de inscripciones: as 1
+:Supervisor de campeonato: as 2
+:Encargado de campeonato: as 3
+:Tribunal: as 4
+
+rectangle {
+
+"Registrar inscripción de equipo" as (CU9)
+"Registrar nuevo equipo" as (CU4)
+"Registrar miembros del equipo" as (CU10)
+"Consultar lista de miembros de equipo" as (CU1)
+"Registrar datos del partido" as (CU2)
+"Registrar nuevo campeonato" as (CU3)
+"Registran sanción" as (CU5)
+"Emitir informe de sanción" as (CU6)
+"Registrar federación de equipo" as (CU7)
+"Registrar fixture campeonato" as (CU8)
+"Consultar resultados de campeonato" as (CU11)
+
+
+}
+
+1 --> CU1 
+1 --> CU9
+2 --> CU2
+CU9 <.."extend" CU4
+CU9 <.."extend" CU10
+3 --> CU3
+3 --> CU8
+4 --> CU5
+4 --> CU6
+5 --> CU7
+2 --> CU11
+@enduml

@@ -7,7 +7,7 @@ Class Piezas{
     posicion: posicion
     jugador: Jugadores
 
-    cambiarPosicion()
+    cambiarPosicion()3qwerqe
     modificarActivo()
     comer()
 

@@ -1,0 +1,48 @@
+@startuml
+
+left to right direction
+
+:Socio: as 1
+:Profesor: as 2
+:Administrador: as 3
+
+
+rectangle {
+"Abonar matricula" as (CU1)
+"Inscribir socio" as (CU2)
+"Inscribir en actividad" as (CU13)
+"Abonar Cuota" as (CU7)
+"Generar Lista Asociados Actividades" as (CU5)
+"Controlar morosidad" as (CU8)
+"Dar de baja Socio de  Actividad" as (CU9)
+"Dar de baja a socio del Club" as (CU10)
+"ABMC actividades" as (CU11)
+"ABMC profesor" as (CU12)
+
+
+
+
+}
+
+
+1 --> CU1
+1 --> CU2
+1 --> CU13
+1 --> CU9
+1 --> CU10
+CU1 --> CU7
+CU7 --> 1
+
+3 --> CU11
+3 --> CU12
+3 --> CU8
+CU8 --> 1
+3 --> CU5
+CU5 --> 2
+
+
+
+
+
+
+@enduml
